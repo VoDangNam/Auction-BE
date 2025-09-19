@@ -7,4 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends MongoRepository<User,String> {
     boolean existsByEmail(String email);
+<<<<<<< Updated upstream
+=======
+    Optional<User> findByEmail(String email);
+>>>>>>> Stashed changes
 }
