@@ -20,4 +20,7 @@ public class InvoiceService {
     public Invoice saveInvoice(Invoice invoice){
         return invoiceRepository.save(invoice);
     }
+    public List<Invoice> getByOwnerId(String ownerId){
+        return invoiceRepository.findByUser_Id(ownerId);
+    }
 }
