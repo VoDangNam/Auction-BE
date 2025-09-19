@@ -24,6 +24,6 @@ public class NotificationController {
     public Notification creatNotification(@RequestBody Notification notification){
         return notificationService.addNotification(notification);
     }
-//http://localhost:8081/api/notification/u001
+//http://localhost:8081/api/notification/68c9154508a3858c703ad81f
     //http://localhost:8081/api/notification/addNotification
 }
