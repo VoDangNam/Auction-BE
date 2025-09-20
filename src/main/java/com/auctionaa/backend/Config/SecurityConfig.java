@@ -14,8 +14,20 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // disable CSRF theo cú pháp mới
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/register", "/api/auth/register",
+<<<<<<< Updated upstream
                                 "/FeaturedAw", "/addArtwork","/allArtwork",
                                 "/addInvoice","/getListInvoice"
+=======
+                                "/featured",
+                                "/all",
+                                "/upload",
+                                "/addInvoice","/getListInvoice",
+                                "/owner/{ownerid}",
+                                "invoice/{ownerid}",
+                                "/api/notification/**",
+                                "/getRooms/{userId}",
+                                "/login","/getEmailAndUsernameFromToken"
+>>>>>>> Stashed changes
                         ).permitAll()
                         .anyRequest().authenticated()
                 );

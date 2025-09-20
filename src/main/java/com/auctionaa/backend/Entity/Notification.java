@@ -24,4 +24,7 @@ public class Notification {
     @DBRef
     private  User user;
 
+    public void setNotificationTime(LocalDateTime notificationTime) {
+        this.notificationTime = notificationTime;
+    }
 }

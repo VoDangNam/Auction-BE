@@ -7,5 +7,10 @@ import java.util.List;
 
 public interface ArtworkRepository extends MongoRepository<Artwork,String> {
     List<Artwork> findTop6ByOrderByPriceDesc();
+<<<<<<< Updated upstream
     List<Artwork> findAll();
 }
+=======
+    List<Artwork> findByOwner_Id(String ownerId);
+}
+>>>>>>> Stashed changes
