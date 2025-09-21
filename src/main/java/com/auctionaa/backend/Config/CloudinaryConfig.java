@@ -26,4 +26,8 @@ public class CloudinaryConfig {
                 "api_secret", apiSecret
         ));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

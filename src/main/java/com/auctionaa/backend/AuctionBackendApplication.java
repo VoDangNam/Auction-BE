@@ -10,4 +10,8 @@ public class AuctionBackendApplication {
 		SpringApplication.run(AuctionBackendApplication.class, args);
         System.out.println("Hello");
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 }

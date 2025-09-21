@@ -11,6 +11,7 @@ public class RegisterRequest {
     private String confirmPassword;
     private String email;
     private String phone;
+<<<<<<< HEAD
 
     public String getUsername() {
         return username;
@@ -51,4 +52,6 @@ public class RegisterRequest {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+=======
+>>>>>>> origin/main
 }

@@ -49,7 +49,11 @@ public class ArtworkController {
 
         // Upload ảnh lên Cloudinary
         String imageUrl = cloudinaryService.uploadFile(file);
+<<<<<<< HEAD
 //nhớ xóa dòng 52
+=======
+
+>>>>>>> origin/main
         // Tạo Artwork mới
         Artwork artwork = new Artwork();
         artwork.setTitle(title);
@@ -61,4 +65,9 @@ public class ArtworkController {
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> origin/main

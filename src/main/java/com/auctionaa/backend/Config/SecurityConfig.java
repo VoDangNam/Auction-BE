@@ -20,10 +20,14 @@ public class SecurityConfig {
                                 "/addInvoice","/getListInvoice",
                                 "/owner/{ownerid}",
                                 "invoice/{ownerid}",
+<<<<<<< HEAD
                                 "/api/notification/**",
                                 "/login",
                                 "/getEmailAndUsernameFromToken",
                                 "/getAuctionRooms/{userId}"
+=======
+                                "/api/notification/**"
+>>>>>>> origin/main
                         ).permitAll()
                         .anyRequest().authenticated()
                 );

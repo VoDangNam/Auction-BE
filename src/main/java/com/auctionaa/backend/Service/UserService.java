@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import java.util.Optional;
 
+=======
+>>>>>>> origin/main
 @Service
 public class UserService {
     @Autowired
@@ -36,6 +39,7 @@ public class UserService {
         return "Đăng ký thành công";
 
     }
+<<<<<<< HEAD
 
     public Optional<User> login(String email, String rawPassword) {
         Optional<User> userOpt = userRepository.findByEmail(email);
@@ -48,4 +52,6 @@ public class UserService {
         }
         return Optional.empty();
     }
+=======
+>>>>>>> origin/main
 }

@@ -7,5 +7,9 @@ import java.util.List;
 
 public interface InvoiceRepository extends MongoRepository<Invoice,String> {
     List<Invoice> findAll();
+<<<<<<< HEAD
 
+=======
+    List<Invoice> findByUser_Id(String userId);
+>>>>>>> origin/main
 }

@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -37,6 +41,7 @@ public class Artwork {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+<<<<<<< HEAD
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
@@ -60,4 +65,7 @@ public class Artwork {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+=======
+
+>>>>>>> origin/main
 }
