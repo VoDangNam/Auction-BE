@@ -7,17 +7,28 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 import java.util.List;
+<<<<<<< HEAD
+=======
 import java.util.Optional;
 
+>>>>>>> origin/main
 @Service
 public class ArtworkService {
 
     private final ArtworkRepository artworkRepository;
+<<<<<<< HEAD
+
+    private CloudinaryService cloudinaryService;
+
+    public ArtworkService(ArtworkRepository artworkRepository) {
+        this.artworkRepository = artworkRepository;
+=======
     private final CloudinaryService cloudinaryService; // service tự viết để upload
 
     public ArtworkService(ArtworkRepository artworkRepository, CloudinaryService cloudinaryService) {
         this.artworkRepository = artworkRepository;
         this.cloudinaryService = cloudinaryService;
+>>>>>>> origin/main
     }
 
     public List<Artwork> getFeaturedArtworks() {
@@ -28,10 +39,19 @@ public class ArtworkService {
         return artworkRepository.findAll();
     }
 
+<<<<<<< HEAD
+    public List<Artwork> getByOwnerId(String ownerId)
+    {
+        return artworkRepository.findByOwner_Id(ownerId);
+    }
+
+    //Chỉ đẩy test PostMan
+=======
     public List<Artwork> getByOwnerId(String ownerId) {
         return artworkRepository.findByOwner_Id(ownerId);
     }
 
+>>>>>>> origin/main
     public Artwork saveArtwork(Artwork artwork) {
         artwork.setCreatedAt(LocalDateTime.now());
         artwork.setUpdatedAt(LocalDateTime.now());
@@ -54,4 +74,8 @@ public class ArtworkService {
             throw new RuntimeException("Lỗi khi tạo Artwork với ảnh: " + e.getMessage());
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

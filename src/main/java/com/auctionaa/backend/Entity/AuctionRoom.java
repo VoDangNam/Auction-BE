@@ -29,6 +29,15 @@ public class AuctionRoom {
 
     private LocalDateTime startTime;
 
+<<<<<<< HEAD
+    private String roomName;
+
+    private String decription;
+
+    private int numberOfArtwork;
+
+=======
+>>>>>>> origin/main
     private LocalDateTime endTime;
 
     private BigDecimal startingPrice;
