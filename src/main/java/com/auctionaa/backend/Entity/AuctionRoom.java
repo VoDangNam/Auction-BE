@@ -1,54 +1,36 @@
 package com.auctionaa.backend.Entity;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
-@Document(collection = "auction_rooms")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuctionRoom {
+@Document(collection = "auction_rooms")
+public class AuctionRoom extends BaseEntity {
 
-    @Id
-    private String auctionRoomId;
-
-    // Reference to artwork
-    @DBRef
-    private Artwork artwork;
-
-    // Reference to admin (a user with admin role)
-    @DBRef
-    private User admin;
-
-    private LocalDateTime startTime;
-
-<<<<<<< HEAD
+    private String adminId; // thay DBRef
+    private List<String> memberIds; // thay DBRef
+    private Integer viewCount; // so_luot_xem
     private String roomName;
+    private String description;
+    private String imageAuctionRoom;
+    private String type;
+    private int status;
 
-    private String decription;
-
-    private int numberOfArtwork;
-
-=======
->>>>>>> origin/main
-    private LocalDateTime endTime;
-
-    private BigDecimal startingPrice;
-
-    private BigDecimal currentPrice;
-
-    private String status;
-
-    // Reference to user (creator or participant)
-    @DBRef
-    private User user;
-
+    @CreatedDate
     private LocalDateTime createdAt;
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+
+    @Override
+    public String getPrefix() {
+        return "ACR-";
+    }
 }

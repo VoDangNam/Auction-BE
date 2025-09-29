@@ -1,33 +1,29 @@
 package com.auctionaa.backend.Entity;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
 
-@Data
 @Document(collection = "notifications")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Notification {
-    @Id
-    private String notificationId;
+public class Notification extends BaseEntity {
+
+    private String userId;
     private String notificationType;
+    private String Title;
     private String notificationContent;
-    private String notificationStatus;
+    private int notificationStatus;
     private LocalDateTime notificationTime;
+    private String refId; // ID tham chiếu đối tượng cụ thể (id phiên, id đấu giá...)
+    @CreatedDate
+    private LocalDateTime createdAt;
 
-    @DBRef
-    private  User user;
-
-<<<<<<< HEAD
-    public void setNotificationTime(LocalDateTime notificationTime) {
-        this.notificationTime = notificationTime;
+    @Override
+    public String getPrefix() {
+        return "NOTI-";
     }
-=======
->>>>>>> origin/main
 }

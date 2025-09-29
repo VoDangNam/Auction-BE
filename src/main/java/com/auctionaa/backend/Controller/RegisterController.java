@@ -1,6 +1,7 @@
 package com.auctionaa.backend.Controller;
 
 import com.auctionaa.backend.DTO.Request.RegisterRequest;
+import com.auctionaa.backend.DTO.Response.AuthResponse;
 import com.auctionaa.backend.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,7 +17,7 @@ public class RegisterController {
     private UserService userService;
 
     @PostMapping("/register")
-    public String CTregister(@RequestBody RegisterRequest request){
+    public AuthResponse CTregister(@RequestBody RegisterRequest request) {
         return userService.register(request);
     }
 }

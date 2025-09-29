@@ -1,12 +1,11 @@
 package com.auctionaa.backend.Entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDateTime;
@@ -16,27 +15,27 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "certificates")
-public class Certificate {
+public class Certificate extends BaseEntity {
 
-    @Id
-    private String id;
+  private String artworkId;
 
-    // Sử dụng @DBRef để tham chiếu đến tài liệu Artwork.
-    // MongoDB không có mối quan hệ 1-1, nhưng DBRef có thể mô phỏng nó.
-    @DBRef
-    private Artwork artwork;
+  @Field("file_path")
+  private String filePath;
 
-    @Field("file_path")
-    private String filePath;
+  @Field("verification_status")
+  private int verificationStatus;
 
-    @Field("verification_status")
-    private String verificationStatus;
+  @Field("certifier")
+  private String certifier;
 
-    @Field("certifier")
-    private String certifier;
+  @CreatedDate
+  private LocalDateTime createdAt;
 
-    @Field("uploaded_at")
-    private LocalDateTime uploadedAt;
+  @LastModifiedDate
+  private LocalDateTime updatedAt;
 
-
+  @Override
+  public String getPrefix() {
+    return "Cer-";
+  }
 }

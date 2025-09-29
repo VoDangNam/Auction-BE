@@ -1,10 +1,7 @@
 package com.auctionaa.backend.Entity;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
 
 @Data
@@ -13,21 +10,19 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Chat {
-    @Id
-    private  String messageId;
-    private  String content;
+public class Chat extends BaseEntity {
+
+    private String content;
     private LocalDateTime deliveredTime;
 
-    //sender va receiver deu la admin va user
-    @DBRef
-    private User user;
+    private String senderId;
 
-    @DBRef
-    private Admin admin;
+    private String receiverId;
 
-    @DBRef
-    private AuctionRoom auctionroom;
+    private String aucttionId;
 
-
+    @Override
+    public String getPrefix() {
+        return "Chat-";
+    }
 }

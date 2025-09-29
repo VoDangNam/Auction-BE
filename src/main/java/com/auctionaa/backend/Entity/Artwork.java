@@ -1,71 +1,47 @@
 package com.auctionaa.backend.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "artworks")
-public class Artwork {
+public class Artwork extends BaseEntity {
 
-    @Id
-    private String id;
-
-    // Tham chiếu đến tài liệu User (chủ sở hữu)
-    @DBRef
-    private User owner;
+    // Lưu thẳng ownerId để query nhanh
+    private String ownerId;
 
     private String title;
     private String description;
-    private String imageUrl;
-    private String status;
+    private String avtArtwork;
+    private List<String> imageUrls;
+    private int status;
     private boolean aiVerified;
+    private BigDecimal startedPrice;
 
-    private double price;
-    // Tham chiếu đến tài liệu Certificate
-    @DBRef
-    private Certificate certificate;
+    private String paintingGenre;// The loai
 
+    private int yearOfCreation; // chỉ lưu năm
+    private String material;
+    private String size;
+
+    private String certificateId; // thay vì @DBRef
+
+    @CreatedDate
     private LocalDateTime createdAt;
+
+    @LastModifiedDate
     private LocalDateTime updatedAt;
 
-<<<<<<< HEAD
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    @Override
+    public String getPrefix() {
+        return "Aw-";
     }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-=======
-
->>>>>>> origin/main
 }

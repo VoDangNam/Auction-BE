@@ -4,25 +4,26 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "report_objects")
-public class ReportObject {
-    @Id
-    private String objectId;
+public class ReportObject extends BaseEntity {
 
-    @DBRef
-    private User user;
+    private String userId;
+    private String auctionRoomId;
+    private String artworkId;
+    @CreatedDate
+    private LocalDateTime createdAt;
 
-    @DBRef
-    private  AuctionRoom auctionroom;
-
-    @DBRef
-    private Artwork artwork;
+    @Override
+    public String getPrefix() {
+        return "RpO-";
+    }
 }

@@ -1,9 +1,10 @@
 package com.auctionaa.backend.Entity;
 
-
 import lombok.*;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.time.LocalDateTime;
 
 @Data
 @Document(collection = "admins")
@@ -11,10 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Admin {
-
-    @Id
-    private String adminId;
+public class Admin extends BaseEntity {
 
     private String fullName;
 
@@ -31,4 +29,15 @@ public class Admin {
     private String status;
 
     private String role;
+
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+
+    @Override
+    public String getPrefix() {
+        return "Ad-";
+    }
 }

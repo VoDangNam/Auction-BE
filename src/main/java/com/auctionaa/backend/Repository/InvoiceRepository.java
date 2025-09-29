@@ -1,15 +1,15 @@
 package com.auctionaa.backend.Repository;
 
 import com.auctionaa.backend.Entity.Invoice;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.List;
 
-public interface InvoiceRepository extends MongoRepository<Invoice,String> {
-    List<Invoice> findAll();
-<<<<<<< HEAD
+public interface InvoiceRepository extends MongoRepository<Invoice, String> {
+    Page<Invoice> findAll(Pageable pageable);
 
-=======
-    List<Invoice> findByUser_Id(String userId);
->>>>>>> origin/main
+    Page<Invoice> findByUserId(String userId, Pageable pageable);
+
+    List<Invoice> findByUserIdOrderByOrderDateDesc(String userId);
 }

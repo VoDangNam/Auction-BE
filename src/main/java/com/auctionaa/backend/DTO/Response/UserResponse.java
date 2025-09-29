@@ -1,23 +1,18 @@
-package com.auctionaa.backend.Entity;
+package com.auctionaa.backend.DTO.Response;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
-@Document(collection = "users")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User extends BaseEntity {
-
+@Getter
+@Setter
+public class UserResponse {
+    private String id;
     private String username;
-    private String password;
     private String email;
     private String phonenumber;
     private int status;
@@ -31,12 +26,7 @@ public class User extends BaseEntity {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    private int role;
     private LocalDateTime dateOfBirth;
     private int gender; // 0 = male, 1 = female, 2 = other
 
-    @Override
-    public String getPrefix() {
-        return "U-";
-    }
 }
